@@ -16,6 +16,21 @@ public class CourseNumbersArray {
         }
         System.out.println(updatedCourses[updatedCourses.length-1]);
 
+        int courseNum_find = 2140;
+        boolean exist = false;
+        for(int i=0;i<updatedCourses.length;i++){
+            if(updatedCourses[i]==courseNum_find){
+                exist=true;
+                break;
+            }
+        }
+        if(exist){
+            System.out.println("the course number exist in the array");
+
+        }else{
+            System.out.println("the course number doesn't exist in the array");
+ 
+        }
 
     }
 }
