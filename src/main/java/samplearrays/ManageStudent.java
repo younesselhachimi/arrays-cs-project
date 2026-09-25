@@ -165,6 +165,31 @@ public class ManageStudent {
         // 10) Append new student
         Student new_s = new Student(6, "Nadia", 21, 16);
         appendStudent(arr, new_s);
+        Student[][] school = new Student[2][3];
+        school[0][0] = new Student(1, "Amine", 19, 15);
+        school[0][1] = new Student(2, "Amina", 18, 16);
+        school[0][2] = new Student(3, "Ali", 20, 12);
+        school[1][0] = new Student(4, "Kamal", 19, 11);
+        school[1][1] = new Student(5, "Nada", 22, 19);
+        school[1][2] = new Student(6, "Hind", 21, 17);
+
+        System.out.println("== School ==");
+        System.out.println("Classroom 1: ");
+        for(Student s : school[0]){
+            System.out.println(s.getName());
+        }
+        System.out.println("Classroom 2: ");
+        for(Student s : school[1]){
+            System.out.println(s.getName());
+        }
+        sortByGradeDesc(school[0]);
+        System.out.println("Top student in Classroom 1 is: "+ school[0][0]);
+        
+        sortByGradeDesc(school[1]);
+        System.out.println("Top student in Classroom 2 is: "+ school[1][0]);
+
+
+
     }
 }
 
