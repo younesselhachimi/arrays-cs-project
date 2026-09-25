@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 public class ManageStudent {
 
-        // 2) Find the Oldest Student
+    // 2) Find the Oldest Student
     public static Student findOldest(Student[] students) {
         if(students.length==0){
             return null;
@@ -24,12 +24,31 @@ public class ManageStudent {
 
     // 3) Count Adult Students (age >= 18)
     public static int countAdults(Student[] students) {
+        int count = 0;
+        if(students.length==0){
+            return 0; 
+        }
+        for(int i=0;i<students.length;i++){
+            if(students[i].getAge()>=18){
+                count++;
+            }
+        }
+        return count;
+
 
     }
 
     // 4) Average Grade (returns NaN if no students or grades)
     public static double averageGrade(Student[] students) {
-
+        if(students.length==0 ){
+            return  Double.NaN;
+        }
+        double sum =0;
+        for(Student s : students){
+            sum+=s.getGrade();
+        }
+        return  sum/students.length;
+        
     }
 
     // 5) Search by Name (case-sensitive; change to equalsIgnoreCase if desired)
@@ -65,6 +84,7 @@ public class ManageStudent {
     // 1) Create an Array of Students + demos for all tasks
     public static void main(String[] args) {
         // Create & initialize array of 5 students
+
         Student[] arr = {
             new Student(1, "Youness"),
             new Student(2, "Noura", 19, 17),
@@ -73,8 +93,6 @@ public class ManageStudent {
             new Student(5, "Aziza", 23)
 
         };
-
-
         // Print all
         System.out.println("== All Students ==");
         for (Student s : arr) System.out.println(s);
@@ -113,3 +131,4 @@ public class ManageStudent {
 
     }
 }
+
