@@ -3,11 +3,9 @@ package samplearrays;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import javax.print.DocFlavor.STRING;
-
 public class ManageStudent {
 
-    // 2) Find the Oldest Student
+        // 2) Find the Oldest Student
     public static Student findOldest(Student[] students) {
         if(students.length==0){
             return null;
@@ -67,7 +65,6 @@ public class ManageStudent {
     // 1) Create an Array of Students + demos for all tasks
     public static void main(String[] args) {
         // Create & initialize array of 5 students
-
         Student[] arr = {
             new Student(1, "Youness"),
             new Student(2, "Noura", 19, 17),
@@ -76,6 +73,8 @@ public class ManageStudent {
             new Student(5, "Aziza", 23)
 
         };
+
+
         // Print all
         System.out.println("== All Students ==");
         for (Student s : arr) System.out.println(s);
@@ -114,4 +113,3 @@ public class ManageStudent {
 
     }
 }
-
