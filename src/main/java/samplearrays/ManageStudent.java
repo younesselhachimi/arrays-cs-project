@@ -3,10 +3,23 @@ package samplearrays;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import javax.print.DocFlavor.STRING;
+
 public class ManageStudent {
 
     // 2) Find the Oldest Student
     public static Student findOldest(Student[] students) {
+        if(students.length==0){
+            return null;
+        }
+        Student oldest = students[0];
+        int max_age = oldest.getAge();
+        for(int i=0;i<students.length;i++){
+            if(students[i].getAge()>=max_age){
+                max_age = students[i].getAge();
+                oldest = students[i];
+            }
+        }
 
         return oldest;
     }
@@ -55,7 +68,14 @@ public class ManageStudent {
     public static void main(String[] args) {
         // Create & initialize array of 5 students
 
+        Student[] arr = {
+            new Student(1, "Youness"),
+            new Student(2, "Noura", 19, 17),
+            new Student(3, "Ali", 20),
+            new Student(4, "Adam", 21, 15),
+            new Student(5, "Aziza", 23)
 
+        };
         // Print all
         System.out.println("== All Students ==");
         for (Student s : arr) System.out.println(s);
